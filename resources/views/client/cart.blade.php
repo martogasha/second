@@ -3,41 +3,28 @@
 <div class="page-content-wrapper">
     <div class="container">
         <!-- Cart Wrapper-->
+        @include('flash-message')
         <div class="cart-wrapper-area py-3">
             <div class="cart-table card mb-3">
                 <div class="table-responsive card-body">
                     <table class="table mb-0">
                         <tbody>
+                        @if(isset($products))
+                            @foreach($products as $product)
                         <tr>
-                            <th scope="row"><a class="remove-product" href="#"><i class="lni lni-close"></i></a></th>
-                            <td><img class="rounded" src="img/product/11.png" alt=""></td>
-                            <td><a href="single-product.html">Ciramic Pot Set<span>$12.10 × 1</span></a></td>
+                            <th scope="row"><a class="remove-product" href="{{url('cartRemove',$product['item']['id'])}}"><i class="lni lni-close"></i></a></th>
+                            <td><img class="rounded" src="{{asset('uploads/product/'.$product['item']['photo'])}}" alt=""></td>
+                            <td><a href="single-product.html">{{$product['item']['product_name']}}<span>{{$product['item']['selling_price']}} × {{$product['quantity']}}</span></a></td>
                             <td>
                                 <div class="quantity">
-                                    <input class="qty-text" type="text" value="1">
+                                    <input class="qty-text" type="text" value="{{$product['item']['selling_price'] * $product['quantity']}}">
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row"><a class="remove-product" href="#"><i class="lni lni-close"></i></a></th>
-                            <td><img class="rounded" src="img/product/14.png" alt=""></td>
-                            <td><a href="single-product.html">Bluetooth Speaker<span>$9.87 × 2</span></a></td>
-                            <td>
-                                <div class="quantity">
-                                    <input class="qty-text" type="text" value="2">
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><a class="remove-product" href="#"><i class="lni lni-close"></i></a></th>
-                            <td><img class="rounded" src="img/product/10.png" alt=""></td>
-                            <td><a href="single-product.html">Modern Gray Tops<span>$7 × 1</span></a></td>
-                            <td>
-                                <div class="quantity">
-                                    <input class="qty-text" type="text" value="1">
-                                </div>
-                            </td>
-                        </tr>
+                            @endforeach
+                        @else
+                            <td>Cart Empty</td>
+                        @endif
                         </tbody>
                     </table>
                 </div>
@@ -60,7 +47,9 @@
             <!-- Cart Amount Area-->
             <div class="card cart-amount-area">
                 <div class="card-body d-flex align-items-center justify-content-between">
-                    <h5 class="total-price mb-0">$<span class="counter">38.84</span></h5><a class="btn btn-warning" href="checkout.html">Checkout Now</a>
+                    @if(isset($totalPrice))
+                    <h5 class="total-price mb-0">Ksh<span class="counter">{{$totalPrice}}</span></h5><a class="btn btn-warning" href="{{url('checkout')}}">Checkout Now</a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -69,19 +58,7 @@
 <!-- Internet Connection Status-->
 <div class="internet-connection-status" id="internetStatus"></div>
 <!-- Footer Nav-->
-<div class="footer-nav-area" id="footerNav">
-    <div class="container h-100 px-0">
-        <div class="suha-footer-nav h-100">
-            <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
-                <li class="active"><a href="home.html"><i class="lni lni-home"></i>Home</a></li>
-                <li><a href="message.html"><i class="lni lni-life-ring"></i>Support</a></li>
-                <li><a href="cart.html"><i class="lni lni-shopping-basket"></i>Cart</a></li>
-                <li><a href="pages.html"><i class="lni lni-heart"></i>Pages</a></li>
-                <li><a href="settings.html"><i class="lni lni-cog"></i>Settings</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+@include('client.menu')
 <!-- All JavaScript Files-->
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/jquery.min.js"></script>
