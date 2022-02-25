@@ -11,6 +11,10 @@
                     <form action="{{route('storeStock')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
+                            <div class="title mb-2"><i class="lni lni-user"></i><span>Barcode</span></div>
+                            <input class="form-control" type="text" name="barcode" value="{{$newBarcode}}" required>
+                        </div>
+                        <div class="mb-3">
                             <div class="title mb-2"><i class="lni lni-user"></i><span>Client Name</span></div>
                             <input class="form-control" type="text" name="client_name" placeholder="Client Name" required>
                         </div>

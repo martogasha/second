@@ -116,7 +116,7 @@
                 "_token": "{{ csrf_token() }}",
                 productId:productId},
             success:function (data) {
-                alert('ok');
+                window.location.href = "{{ url('cart')}}";
             },
             error:function (error) {
                 console.log(error)

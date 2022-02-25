@@ -30,7 +30,10 @@ class ClientController extends Controller
     }
     public function shop()
     {
-        return view('client.shop');
+        $stocks = Stock::all();
+        return view('client.shop',[
+            'stocks'=>$stocks
+        ]);
     }
     public function cart()
     {
@@ -63,6 +66,20 @@ class ClientController extends Controller
         return view('client.checkout',[
             'products'=>$cart->item,
             'totalPrice'=>$cart->totalPrice,
+        ]);
+    }
+    public function search(Request $request){
+        $search = $request->input('search');
+        $stocks = Stock::where('product_name','like',"%$search%")->get();
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
+
+        return view('client.search',[
+            'stocks'=>$stocks,
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
+
+
         ]);
     }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from designing-world.com/suha-v2.6.0/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Feb 2022 07:02:03 GMT -->
+<!-- Mirrored from designing-world.com/suha-v2.6.0/payment-success.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Feb 2022 07:04:05 GMT -->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
@@ -42,37 +42,15 @@
         <div class="sr-only">Loading...</div>
     </div>
 </div>
-<!-- Login Wrapper Area-->
-<div class="login-wrapper d-flex align-items-center justify-content-center text-center">
-    <!-- Background Shape-->
-    <div class="background-shape"></div>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5"><img class="big-logo" src="img/core-img/logo-white.png" alt="">
-                <!-- Register Form-->
-                @include('flash-message')
-                <div class="register-form mt-5 px-4">
-                    <form action="{{url('Login')}}" method="post">
-                        @csrf
-                        <div class="form-group text-start mb-4"><span>Email</span>
-                            <label for="username"><i class="lni lni-user"></i></label>
-                            <input class="form-control" name="email" type="email" placeholder="info@example.com">
-                        </div>
-                        <div class="form-group text-start mb-4"><span>Password</span>
-                            <label for="password"><i class="lni lni-lock"></i></label>
-                            <input class="form-control" name="password" type="password" placeholder="Password">
-                        </div>
-                        <button class="btn btn-warning btn-lg w-100" type="submit">Log In</button>
-                    </form>
-                </div>
-                <!-- Login Meta-->
-                <div class="login-meta-data"><a class="forgot-password d-block mt-3 mb-1" href="forget-password.html">Forgot Password?</a>
-                    <p class="mb-0">Didn't have an account?<a class="ms-1" href="register.html">Register Now</a></p>
-                </div>
-                <!-- View As Guest-->
-                <div class="view-as-guest mt-3"><a class="btn" href="home.html">View as Guest</a></div>
-            </div>
-        </div>
+<!-- Order/Payment Success-->
+<div class="order-success-wrapper">
+    <div class="content">
+        <svg class="bi bi-cart-check text-white mb-3" xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"></path>
+            <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+        </svg>
+        <h5>ORDER SUCCESS</h5>
+        <p>We will call you shortly. Thank you!</p><a class="btn btn-warning btn-sm mt-3" href="{{url('/')}}">Buy Again</a>
     </div>
 </div>
 <!-- All JavaScript Files-->
@@ -90,5 +68,5 @@
 <script src="js/pwa.js"></script>
 </body>
 
-<!-- Mirrored from designing-world.com/suha-v2.6.0/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Feb 2022 07:02:07 GMT -->
+<!-- Mirrored from designing-world.com/suha-v2.6.0/payment-success.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Feb 2022 07:04:05 GMT -->
 </html>

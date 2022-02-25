@@ -4,7 +4,7 @@
     <div class="top-products-area py-3">
         <div class="container">
             <div class="section-heading d-flex align-items-center justify-content-between">
-                <h6>All Products</h6>
+                <h6>{{$stocks->count()}} Product Found</h6>
                 <!-- Select Product Catagory-->
             </div>
             <div class="row g-3">

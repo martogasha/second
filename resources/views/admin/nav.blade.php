@@ -45,7 +45,7 @@
 <div class="header-area" id="headerArea">
     <div class="container h-100 d-flex align-items-center justify-content-between">
         <!-- Logo Wrapper-->
-        <div class="logo-wrapper"><a href="home.html"><img src="{{asset('img/core-img/logo-small.png')}}" alt=""></a></div>
+        <div class="logo-wrapper"><a href="{{url('admin')}}"><img src="{{asset('img/core-img/logo-small.png')}}" alt=""></a></div>
         <!-- Search Form-->
         <div class="top-search-form">
             <form action="#" method="">
@@ -79,6 +79,7 @@
             <li><a href="{{url('stock')}}"><i class="lni lni-empty-file"></i>Stock</a></li>
             <li><a href="{{url('checkout')}}"><i class="lni lni-heart"></i>Mpesa</a>
             <li><a href="{{url('checkout')}}"><i class="lni lni-heart"></i>Cash</a>
+            <li><a href="{{url('sold')}}"><i class="lni lni-heart"></i>Sold Items</a>
 
             </li>
             <li><a href="intro.html"><i class="lni lni-power-switch"></i>Sign Out</a></li>

@@ -12,32 +12,36 @@
                         <h6 class="text-center mb-0 text-white">Billing Information</h6>
                     </div>
                 </div>
-
+@include('flash-message')
                     <div class="card user-data-card">
                         <div class="card-body">
                             <div class="single-profile-data d-flex align-items-center justify-content-between">
                                 <div class="title d-flex align-items-center"><i class="lni lni-user"></i><span>First Name</span></div>
-                                <input type="text" name="first_name">
+                                <input type="text" name="first_name" required/>
                             </div>
                             <div class="single-profile-data d-flex align-items-center justify-content-between">
                                 <div class="title d-flex align-items-center"><i class="lni lni-user"></i><span>Last Name</span></div>
-                                <input type="text" name="last_name">
+                                <input type="text" name="last_name" required/>
                             </div>
                             <div class="single-profile-data d-flex align-items-center justify-content-between">
                                 <div class="title d-flex align-items-center"><i class="lni lni-envelope"></i><span>Email Address</span></div>
-                                <input type="email" name="email">
+                                <input type="email" name="email" required>
                             </div>
                             <div class="single-profile-data d-flex align-items-center justify-content-between">
                                 <div class="title d-flex align-items-center"><i class="lni lni-phone"></i><span>Phone</span></div>
-                                <input type="text" name="phone">
+                                <input type="text" name="phone" required>
                             </div>
                             <div class="single-profile-data d-flex align-items-center justify-content-between">
                                 <div class="title d-flex align-items-center"><i class="lni lni-map-marker"></i><span>Shipping Address</span></div>
-                                <input type="text" name="address">
+                                <input type="text" name="address" required>
                             </div>
-                            <!-- Edit Address--><a class="btn btn-danger w-100" href="edit-profile.html">Edit Billing Information</a>
-                            <br>
-                            <br>
+                            <input type="hidden" name="role" value="1">
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                            @else
+                                already have an account? <a href="{{url('login')}}">login</a>
+                                <br>
+                                <br>
+                            @endif
                             <div class="checkbox">
                                 <label> <input type="checkbox" name="check"><b>Create Account with above details</b></label>
                             </div>

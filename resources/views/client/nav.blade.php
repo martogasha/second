@@ -48,8 +48,9 @@
         <div class="logo-wrapper"><a href="{{url('/')}}"><img src="img/core-img/logo-small.png" alt=""></a></div>
         <!-- Search Form-->
         <div class="top-search-form">
-            <form action="#" method="">
-                <input class="form-control" type="search" placeholder="Enter your keyword">
+            <form action="{{url('search')}}" method="post">
+                @csrf
+                <input class="form-control" type="search" name="search" placeholder="Enter your keyword">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -73,7 +74,7 @@
         <!-- Sidenav Nav-->
         <ul class="sidenav-nav ps-0">
             <li><a href="{{url('profile')}}"><i class="lni lni-user"></i>My Profile</a></li>
-            <li><a href="{{url('notification')}}"><i class="lni lni-alarm lni-tada-effect"></i>Notifications<span class="ms-3 badge badge-warning">3</span></a></li>
+            <li><a href="{{url('notification')}}"><i class="lni lni-alarm lni-tada-effect"></i>Notifications</a></li>
             <li><a href="{{url('shop')}}"><i class="lni lni-cart"></i>Shop</a>
             </li>
             <li><a href="{{url('cart')}}"><i class="lni lni-empty-file"></i>Cart</a></li>

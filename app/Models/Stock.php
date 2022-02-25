@@ -9,6 +9,7 @@ class Stock extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'barcode',
         'client_name',
         'idno',
         'phone',

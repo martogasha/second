@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sales extends Model
+class Mpesa extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'stock_id',
+        'first_name',
+        'last_name',
+        'phone',
+        'amount',
+        'date',
         'order_id',
-        'quantity',
     ];
-    public function stock(){
-        return $this->belongsTo(Stock::class);
-    }
 }

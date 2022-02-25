@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sales extends Model
+class Sold extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'stock_id',
-        'order_id',
-        'quantity',
+        'sales_id',
     ];
-    public function stock(){
-        return $this->belongsTo(Stock::class);
-    }
 }
